@@ -6,23 +6,28 @@
     
     <!-- SEO Meta Tags -->
     <title>Petr Novotný | Servis a seřízení laminovacích a kašírovacích strojů</title>
-    <meta name="description" content="Profesionální servis, seřízení a údržba laminovacích, kašírovacích a fixačních strojů (MEYER). 20 let praxe přímo u výrobce. Rychlý servis po celé ČR a Evropě.">
-    <meta name="keywords" content="servis strojů, laminovací stroje, kašírovací stroje, MEYER Machines, výměna PTFE pásů, seřízení válců, opravy strojů, OSVČ servis, průmyslový servis">
+    <meta name="description" content="Profesionální servis, seřízení a údržba laminovacích, kašírovacích a chladicích strojů (MEYER). 11 let praxe u výrobce, 20+ let celkem v servisu. Rychlý zásah po celé ČR a Evropě.">
+    <meta name="keywords" content="servis strojů, laminovací stroje, kašírovací stroje, MEYER Machines, KASYS, automatické sklady, výměna PTFE pásů, seřízení válců, opravy strojů, OSVČ servis, průmyslový servis">
     <meta name="author" content="Petr Novotný">
     <link rel="canonical" href="https://petrnovotny.stelab.cz/">
     
+    <!-- Hreflang Tags for SEO -->
+    <link rel="alternate" hreflang="cs" href="https://petrnovotny.stelab.cz/" />
+    <link rel="alternate" hreflang="en" href="https://petrnovotny.stelab.cz/index_en.html" />
+    <link rel="alternate" hreflang="x-default" href="https://petrnovotny.stelab.cz/" />
+
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://petrnovotny.stelab.cz/">
     <meta property="og:title" content="Petr Novotný | Servis laminovacích a kašírovacích strojů">
-    <meta property="og:description" content="Bývalý hlavní servisní technik u MEYER Machines s 20 lety praxe. Nabízím nezávislý servis, seřizování a opravy laminovacích linky pro celou ČR a Evropu.">
+    <meta property="og:description" content="Bývalý servisní specialista u MEYER Machines a KASYS. Nabízím nezávislý servis, seřizování a opravy laminovacích linky pro celou ČR a Evropu.">
     <meta property="og:image" content="https://petrnovotny.stelab.cz/images/IMG_0157.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://petrnovotny.stelab.cz/">
     <meta property="twitter:title" content="Petr Novotný | Servis laminovacích a kašírovacích strojů">
-    <meta property="twitter:description" content="Profesionální servis laminovacích a kašírovacích linek. 20 let praxe u výrobce MEYER. Rychlé opravy a minimalizace prostojů.">
+    <meta property="twitter:description" content="Profesionální servis laminovacích a kašírovacích linek. 20+ let celkové praxe v průmyslovém servisu. Rychlé opravy a minimalizace prostojů.">
     <meta property="twitter:image" content="https://petrnovotny.stelab.cz/images/IMG_0157.png">
 
     <!-- Fonts -->
@@ -95,6 +100,13 @@
             </nav>
             
             <div class="header-right">
+                <!-- Language Switcher -->
+                <div class="lang-switcher">
+                    <span class="lang-current">CZ</span>
+                    <span class="lang-divider">|</span>
+                    <a href="index_en.html" class="lang-link">EN</a>
+                </div>
+                
                 <a href="tel:+420607132574" class="btn btn-outline btn-sm cta-desktop">
                     <svg class="icon icon-phone" viewBox="0 0 24 24"><path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.27 11.72 11.72 0 0 0 3.67.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.72 11.72 0 0 0 .58 3.67 1 1 0 0 1-.27 1.11z"/></svg>
                     +420 607 132 574
@@ -111,9 +123,9 @@
         <section id="home" class="hero-section">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <div class="badge">Bývalý servisní technik MEYER Machines</div>
+                    <div class="badge">Bývalý servisní specialista MEYER Machines</div>
                     <h1>Profesionální servis <br><span class="text-gradient">laminovacích strojů</span></h1>
-                    <p class="hero-lead">Přes 20 let praxe v oboru přímo u německého výrobce. Nabízím nezávislý záruční a pozáruční servis, přesné seřízení a rychlé opravy kašírovacích linek po celé ČR i Evropě.</p>
+                    <p class="hero-lead">Přes 20 let praxe v průmyslovém servisu. Nabízím nezávislý záruční a pozáruční servis, přesné seřízení a rychlé opravy kašírovacích i lisovacích linek po celé ČR i Evropě.</p>
                     
                     <div class="hero-actions">
                         <a href="#contact" class="btn btn-primary">Rychlá poptávka servisu</a>
@@ -139,7 +151,7 @@
                 <div class="hero-image-wrapper">
                     <div class="glow-bg"></div>
                     <div class="hero-image-card">
-                        <img src="images/IMG_0143.png" alt="Petr Novotný - Servisní technik laminovacích strojů" class="hero-photo">
+                        <img id="heroPhoto" alt="Petr Novotný - Servisní technik laminovacích strojů" class="hero-photo">
                     </div>
                 </div>
             </div>
@@ -151,7 +163,7 @@
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-num" data-target="20">0</div>
-                        <div class="stat-label">Let zkušeností u výrobce MEYER</div>
+                        <div class="stat-label">Let zkušeností v servisu strojů</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-num" data-target="150">0</div>
@@ -170,17 +182,19 @@
             <div class="container about-container">
                 <div class="about-image-wrapper">
                     <div class="about-image-card">
-                        <img src="images/IMG_0157.png" alt="Petr Novotný při práci na stroji" class="about-photo">
+                        <img id="aboutPhoto" alt="Petr Novotný při práci na stroji" class="about-photo">
                     </div>
                 </div>
                 <div class="about-content">
                     <div class="section-badge">Můj příběh</div>
                     <h2>Odborník, na kterého se můžete spolehnout</h2>
-                    <p>Po 20 letech působení na pozici hlavního servisního technika u prestižního německého výrobce laminovacích a kašírovacích linek <strong>Maschinenfabrik Herbert MEYER GmbH</strong> jsem se rozhodl osamostatnit jako nezávislý OSVČ.</p>
+                    <p>Mám za sebou více než 20 let profesionálního působení v oblasti montáží, servisu a plánování údržby průmyslových technologií a automatizovaných systémů.</p>
                     
-                    <p>Během své kariéry jsem instaloval, oživoval a servisoval stovky strojů v automobilovém průmyslu, textilních továrnách i u výrobců kompozitních materiálů po celém světě. Znám tyto stroje do posledního šroubku, znám jejich slabá místa a vím, jak je nastavit pro maximální efektivitu a kvalitu výroby.</p>
+                    <p>Posledních 11 let (od roku 2015) jsem pracoval přímo v Německu u renomovaného výrobce <strong>Maschinenfabrik Herbert MEYER GmbH</strong>. Zde jsem začínal jako elektromechanik při výrobě řídicích panelů a zapojování elektrických komponent a následně jsem se vypracoval na pozici <strong>hlavního servisního specialisty</strong>. Měl jsem na starosti instalace, oživování, kalibrace, odstraňování elektro-mechanických závad a školení obsluhy u nadnárodních zákazníků po celém světě.</p>
                     
-                    <p>Moje rozhodnutí jít vlastní cestou znamená pro vás, zákazníky, <strong>rychlejší komunikaci, nižší servisní náklady a maximální flexibilitu</strong> bez složité korporátní administrativy.</p>
+                    <p>Předtím jsem strávil 8 let (2004–2012) ve společnosti <strong>KASYS s.r.o.</strong> jako servisní technik automatizovaných skladovacích systémů Hänel a od roku 2007 jako <strong>vedoucí servisního oddělení</strong>, kde jsem vedl instalační týmy, plánoval servis a přímo komunikoval s německým výrobcem.</p>
+                    
+                    <p>Jako nezávislý OSVČ vám přináším špičkové tovární know-how, rychlou komunikaci, časovou flexibilitu a férové ceny.</p>
                     
                     <div class="about-checklist">
                         <div class="check-item">
@@ -193,7 +207,7 @@
                         </div>
                         <div class="check-item">
                             <svg class="check-icon" viewBox="0 0 24 24"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            <span>Individuální přístup a férové jednání</span>
+                            <span>Individuální přístup a rychlý výjezd na místo</span>
                         </div>
                     </div>
                 </div>
@@ -206,7 +220,7 @@
                 <div class="section-header text-center">
                     <div class="section-badge">Co nabízím</div>
                     <h2>Kompletní servisní služby</h2>
-                    <p class="section-lead">Díky hlubokým znalostem konstrukcí a procesů zajišťuji široké spektrum servisních prací pro udržení optimálního chodu vaší výroby.</p>
+                    <p class="section-lead">Díky hlubokým znalostem konstrukcí a procesů zajišťuji široké spektrum servisních prací pro udržení chodu vaší výroby.</p>
                 </div>
                 
                 <div class="services-grid">
@@ -233,7 +247,7 @@
                         <div class="service-icon">
                             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
                         </div>
-                        <h3>Přesná kalibrace & seřízení</h3>
+                        <h3>Kalibrace & seřízení</h3>
                         <p>Zarovnání tlakových válců a topných desek. Provádění testů rovnoběžnosti pomocí speciálních tlakových indikačních pásků. Přesné nastavení pracovní mezery (Gap) pro dokonalé spojení materiálů.</p>
                     </div>
                     
@@ -258,7 +272,7 @@
                     <!-- Service 6 -->
                     <div class="service-card">
                         <div class="service-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
                         </div>
                         <h3>Poradenství & školení</h3>
                         <p>Konzultace při výběru vhodných materiálů a technologií lepení/laminace. Zaškolení obsluhy a údržby pro správnou manipulaci se strojem a minimalizaci lidských chyb.</p>
@@ -287,7 +301,7 @@
                     </div>
                     <div class="machine-type-card">
                         <h4>Nánosové stroje & Hotmelt linky (Coating & Hotmelt)</h4>
-                        <p>Zařízení pro nanášení práškových lepidel, past, nebo hotmelt nanášení (např. gravírované válce, scatter coating). Údržba aplikačních hlav, čištění válců od zbytků lepidel a kalibrace tloušťky nánosu.</p>
+                        <p>Zařízení pro nanášení práškových lepidel, past, nebo hotmelt nanášení (např. gravírované válce, scatter coating). Údržba aplikačních heads, čištění válců od zbytků lepidel a kalibrace tloušťky nánosu.</p>
                     </div>
                 </div>
             </div>
@@ -347,9 +361,9 @@
                         <h3>Nezávazná poptávka servisu</h3>
                         <p class="form-desc">Vyplňte krátký formulář a já se vám ozvu zpět s návrhem řešení.</p>
                         
-                        <!-- Form submits to Web3Forms (easy setup via dashboard or standard static action) -->
+                        <!-- Form submits to Web3Forms -->
                         <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-                            <!-- Web3Forms Access Key (Placeholder - user will update in deployment) -->
+                            <!-- Web3Forms Access Key -->
                             <input type="hidden" name="access_key" value="d9a4da5c-e0f5-42fb-bac7-27ce6bb5f1d4">
                             <input type="hidden" name="subject" value="Nová poptávka servisu z webu petrnovotny.stelab.cz">
                             <input type="checkbox" name="botcheck" class="hidden-field" style="display: none;">
@@ -409,6 +423,7 @@
     </footer>
 
     <!-- JS Scripts -->
+    <script src="images.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
