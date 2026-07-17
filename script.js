@@ -136,15 +136,3 @@ if (contactForm && formStatus) {
         }
     });
 }
-
-// Dynamically inject Base64 images to bypass browser file protocol restrictions
-document.addEventListener('DOMContentLoaded', () => {
-    const heroPhoto = document.getElementById('heroPhoto');
-    if (heroPhoto && typeof imgHeroBase64 !== 'undefined') {
-        heroPhoto.src = imgHeroBase64;
-    }
-    const aboutPhoto = document.getElementById('aboutPhoto');
-    if (aboutPhoto && typeof imgAboutBase64 !== 'undefined') {
-        aboutPhoto.src = imgAboutBase64;
-    }
-});
