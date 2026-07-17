@@ -350,7 +350,7 @@ body {
     border: 1px solid var(--color-border);
     padding: 1rem;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    max-width: 290px;
+    max-width: 250px;
 }
 
 .hero-photo {
@@ -868,6 +868,10 @@ body {
     
     .hero-content h1 {
         font-size: 2.5rem;
+    }
+    
+    .hero-image-card {
+        max-width: 200px;
     }
     
     .menu-toggle {
