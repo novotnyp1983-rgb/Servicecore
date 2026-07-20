@@ -57,3 +57,35 @@ Jakmile máte DNS záznam vytvořený a soubory nahrané:
 6. Jakmile je DNS ověřeno, zaškrtněte políčko **Enforce HTTPS**, aby byl web zabezpečený SSL certifikátem.
 
 Web by měl být během několika minut plně funkční na adrese `https://petrnovotny.stelab.cz/`.
+
+---
+
+## 5. Administrace a vizuální úpravy webu (Word-like Editor)
+
+Web obsahuje na míru naprogramované administrační rozhraní, které umožňuje Petrovi upravovat texty a kontaktní údaje přímo na stránce bez nutnosti znát HTML kód.
+
+### A. Jak spustit administrační režim
+Pro vstup do administrace stačí na konci webové adresy přidat parametr `?edit=true`:
+* Česky: `https://petrnovotny.stelab.cz/?edit=true`
+* Anglicky: `https://petrnovotny.stelab.cz/index_en.html?edit=true`
+
+### B. První přihlášení – Vygenerování GitHub Tokenu (provede se pouze jednou)
+Administrace běží přímo v prohlížeči a pro uložení změn potřebuje právo zápisu do vašeho GitHub repozitáře. K tomu slouží **Personal Access Token (PAT)**:
+1. Přihlaste se na GitHub a přejděte na stránku: [github.com/settings/tokens](https://github.com/settings/tokens) (klikněte na **Generate new token (classic)**).
+2. Do pole **Note** napište např. `web-editor-petr`.
+3. Nastavte **Expiration** (Expiraci) dle libosti (doporučeno 90 dní nebo bez omezení „No expiration“).
+4. V sekci oprávnění zaškrtněte políčko **`repo`** (zajistí možnost zápisu a uložení souborů do repozitáře).
+5. Klikněte dole na zelené tlačítko **Generate token**.
+6. **DŮLEŽITÉ:** Zobrazený kód (začíná na `ghp_...`) si zkopírujte a uložte. Zobrazí se pouze jednou!
+7. Otevřete administrační odkaz z kroku A, vložte zkopírovaný token do vyskakovacího okna a klikněte na **Přihlásit se**. Token se bezpečně uloží do prohlížeče a příště se již přihlašovat nemusíte.
+
+### C. Jak provádět změny
+1. V administračním režimu se kolem všech editovatelných polí (nadpisy, texty, odrážky, čísla statistik) zobrazí jemný modrý přerušovaný okraj.
+2. Stačí kliknout do ohraničené oblasti a začít psát (přesně jako ve Wordu).
+   - *Poznámka:* Pokud do polí kopírujete text odjinud, automaticky se vyčistí formátování (vloží se jako prostý text), aby se nerozhodilo stylování webu.
+3. Pokud upravujete telefonní číslo nebo e-mail v kontaktech, skript automaticky aktualizuje i klikací odkazy (`tel:` a `mailto:`), takže budou ihned fungovat.
+4. Pokud upravíte číslo ve statistikách (např. *20 let zkušeností*), skript automaticky upraví i animaci počítadla pro běžné návštěvníky.
+5. Pro uložení klikněte na zelené tlačítko **Uložit změny** na spodní liště. Během 3 sekund se změny sloučí, odešlou na GitHub a stránka se obnoví.
+6. GitHub Pages změny přegenerují a za **1 až 2 minuty** se nový text zobrazí všem návštěvníkům na internetu.
+7. Pokud budete chtít režim úprav opustit, klikněte na **Zahodit** nebo se odhlaste tlačítkem **Odhlásit se** (to smaže token z prohlížeče, užitečné na cizím počítači).
+
