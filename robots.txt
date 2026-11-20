@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://petrnovotny.stelab.cz/sitemap.xml
+Sitemap: https://servicecore.cz/sitemap.xml
