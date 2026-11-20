@@ -84,14 +84,41 @@ const contactForm = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
 const submitBtn = document.getElementById('submitBtn');
 
+const formMessages = {
+    cs: {
+        sending: 'Odesílám...',
+        missingKey: 'Chyba: Formulář není plně nakonfigurován. V kódu schází přístupový klíč k e-mailové službě (Access Key). Podívejte se prosím do souboru DEPLOYNÁVOD.md.',
+        success: 'Děkuji! Vaše poptávka byla úspěšně odeslána. Ozvu se vám co nejdříve.',
+        error: 'Nastala chyba při odesílání formuláře. Zkuste to prosím znovu nebo mě kontaktujte napřímo.',
+        networkError: 'Nelze se spojit se serverem. Zkontrolujte prosím připojení k internetu, případně mě kontaktujte přímo přes e-mail či telefon.'
+    },
+    en: {
+        sending: 'Sending...',
+        missingKey: 'Error: The form is not fully configured. Access Key is missing in the code.',
+        success: 'Thank you! Your inquiry has been sent successfully. I will get back to you as soon as possible.',
+        error: 'An error occurred while sending the form. Please try again or contact me directly.',
+        networkError: 'Unable to connect to the server. Please check your internet connection or contact me directly via email or phone.'
+    },
+    de: {
+        sending: 'Wird gesendet...',
+        missingKey: 'Fehler: Das Formular ist nicht vollständig konfiguriert. Der Access Key fehlt im Code.',
+        success: 'Vielen Dank! Ihre Anfrage wurde erfolgreich gesendet. Ich melde mich schnellstmöglich bei Ihnen.',
+        error: 'Beim Senden des Formulars ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie mich direkt.',
+        networkError: 'Keine Verbindung zum Server möglich. Bitte prüfen Sie Ihre Internetverbindung oder kontaktieren Sie mich direkt per E-Mail oder Telefon.'
+    }
+};
+
 if (contactForm && formStatus) {
+    const lang = (document.documentElement.lang || 'cs').toLowerCase().slice(0, 2);
+    const msgs = formMessages[lang] || formMessages.cs;
+
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         // Disable submit button and show loading state
         submitBtn.disabled = true;
         const origBtnText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<span>Odesílám...</span>';
+        submitBtn.innerHTML = `<span>${msgs.sending}</span>`;
         
         formStatus.className = 'form-status';
         formStatus.style.display = 'none';
@@ -99,7 +126,7 @@ if (contactForm && formStatus) {
         // Check if user set the Access Key
         const accessKeyInput = contactForm.querySelector('input[name="access_key"]');
         if (!accessKeyInput || accessKeyInput.value === 'YOUR_ACCESS_KEY_HERE') {
-            formStatus.innerText = 'Chyba: Formulář není plně nakonfigurován. V kódu schází přístupový klíč k e-mailové službě (Access Key). Podívejte se prosím do souboru DEPLOYNÁVOD.md.';
+            formStatus.innerText = msgs.missingKey;
             formStatus.classList.add('error');
             submitBtn.disabled = false;
             submitBtn.innerHTML = origBtnText;
@@ -120,15 +147,15 @@ if (contactForm && formStatus) {
             const result = await response.json();
             
             if (response.ok) {
-                formStatus.innerText = 'Děkuji! Vaše poptávka byla úspěšně odeslána. Ozvu se vám co nejdříve.';
+                formStatus.innerText = msgs.success;
                 formStatus.classList.add('success');
                 contactForm.reset();
             } else {
-                formStatus.innerText = result.message || 'Nastala chyba při odesílání formuláře. Zkuste to prosím znovu nebo mě kontaktujte napřímo.';
+                formStatus.innerText = result.message || msgs.error;
                 formStatus.classList.add('error');
             }
         } catch (error) {
-            formStatus.innerText = 'Nelze se spojit se serverem. Zkontrolujte prosím připojení k internetu, případně mě kontaktujte přímo přes e-mail či telefon.';
+            formStatus.innerText = msgs.networkError;
             formStatus.classList.add('error');
         } finally {
             submitBtn.disabled = false;

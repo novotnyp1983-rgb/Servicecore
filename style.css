@@ -2,17 +2,17 @@
 
 /* Reset & Variables */
 :root {
-    --color-bg-dark: #0b0f19;
-    --color-bg-card: #131b2e;
-    --color-bg-nav: rgba(11, 15, 25, 0.75);
+    --color-bg-dark: #182338;
+    --color-bg-card: #212f4a;
+    --color-bg-nav: rgba(24, 35, 56, 0.85);
     --color-text-main: #f8fafc;
-    --color-text-muted: #94a3b8;
+    --color-text-muted: #cbd5e1;
     --color-primary: #0284c7;
     --color-primary-hover: #0369a1;
-    --color-accent: #06b6d4;
-    --color-accent-rgb: 6, 182, 212;
-    --color-border: #1e293b;
-    --color-border-glow: rgba(2, 132, 199, 0.2);
+    --color-accent: #22d3ee;
+    --color-accent-rgb: 34, 211, 238;
+    --color-border: #2d3f5e;
+    --color-border-glow: rgba(34, 211, 238, 0.25);
     
     --font-sans: 'Inter', sans-serif;
     --font-heading: 'Montserrat', sans-serif;
@@ -35,11 +35,37 @@ html {
     background-color: var(--color-bg-dark);
     color: var(--color-text-main);
     font-family: var(--font-sans);
+    overflow-x: clip;
 }
 
 body {
     overflow-x: hidden;
     line-height: 1.6;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(1.35) contrast(1.05);
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+        linear-gradient(100deg, rgba(24, 35, 56, 0.68) 0%, rgba(24, 35, 56, 0.45) 55%, rgba(24, 35, 56, 0.35) 100%);
+    background-size: 48px 48px, 48px 48px, 100% 100%;
+    z-index: -1;
 }
 
 /* Layout Utilities */
@@ -72,6 +98,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    white-space: nowrap;
     font-family: var(--font-heading);
     font-weight: 600;
     padding: 0.8rem 1.6rem;
@@ -147,8 +174,8 @@ body {
 }
 
 .logo {
-    display: flex;
-    flex-direction: column;
+    display: block;
+    white-space: nowrap;
     text-decoration: none;
     color: #fff;
     font-family: var(--font-heading);
@@ -163,6 +190,8 @@ body {
 }
 
 .logo-sub {
+    display: block;
+    margin-top: 2px;
     font-size: 0.65rem;
     font-weight: 500;
     text-transform: uppercase;
@@ -173,10 +202,15 @@ body {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.75rem;
+}
+
+.nav-cta-mobile {
+    display: none;
 }
 
 .nav-link {
+    white-space: nowrap;
     text-decoration: none;
     color: var(--color-text-muted);
     font-weight: 500;
@@ -249,9 +283,11 @@ body {
 }
 
 .hero-container {
+    position: relative;
+    z-index: 1;
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 4rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
     align-items: center;
 }
 
@@ -259,6 +295,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    max-width: 760px;
 }
 
 .badge {
@@ -363,7 +400,9 @@ body {
 /* Stats Section */
 .stats-section {
     padding: 3rem 0;
-    background-color: var(--color-bg-card);
+    background-color: rgba(33, 47, 74, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
 }
@@ -439,8 +478,9 @@ body {
 
 .about-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1fr;
+    max-width: 900px;
+    gap: 2rem;
     align-items: center;
 }
 
@@ -507,7 +547,7 @@ body {
 /* Services Section */
 .services-section {
     padding: 7rem 0;
-    background-color: #0d1322;
+    background-color: rgba(24, 35, 56, 0.55);
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
 }
@@ -519,17 +559,22 @@ body {
 }
 
 .service-card {
+    position: relative;
+    z-index: 1;
     background-color: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: 16px;
     padding: 2.5rem 2rem;
     transition: var(--transition-medium);
+    transform-origin: center center;
 }
 
 .service-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--color-primary);
-    box-shadow: 0 10px 30px rgba(2, 132, 199, 0.15);
+    z-index: 20;
+    transform: scale(1.32) translateY(-4px);
+    border-color: var(--color-accent);
+    background-color: #243452;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 25px rgba(2, 132, 199, 0.35);
 }
 
 .service-icon {
@@ -577,16 +622,22 @@ body {
 }
 
 .machine-type-card {
-    background-color: #0d1322;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(13, 19, 34, 0.85);
     border: 1px solid var(--color-border);
     border-radius: 16px;
     padding: 2rem;
-    transition: var(--transition-fast);
+    transition: var(--transition-medium);
+    transform-origin: center center;
 }
 
 .machine-type-card:hover {
-    border-color: var(--color-border-glow);
-    background-color: var(--color-bg-card);
+    z-index: 20;
+    transform: scale(1.32) translateY(-4px);
+    border-color: var(--color-accent);
+    background-color: #243452;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 25px rgba(2, 132, 199, 0.35);
 }
 
 .machine-type-card h4 {
@@ -608,7 +659,7 @@ body {
 /* Contact Section */
 .contact-section {
     padding: 7rem 0;
-    background-color: #0b0f19;
+    background-color: rgba(24, 35, 56, 0.55);
     border-top: 1px solid var(--color-border);
 }
 
@@ -827,7 +878,27 @@ body {
 
 /* Responsive Design */
 
+@media (max-width: 1280px) {
+    .service-card:hover,
+    .machine-type-card:hover {
+        transform: scale(1.12) translateY(-4px);
+    }
+}
+
 @media (max-width: 1024px) {
+    .service-card:hover,
+    .machine-type-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .nav-menu {
+        gap: 1.1rem;
+    }
+
+    .lang-switcher {
+        margin-right: 0.75rem;
+    }
+
     .hero-container {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -858,6 +929,12 @@ body {
     
     .machines-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .cta-desktop {
+        display: none;
     }
 }
 
@@ -953,38 +1030,86 @@ body {
 .lang-switcher {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 0.85rem;
-    color: var(--color-text-muted);
+    gap: 0.45rem;
     margin-right: 1.5rem;
-    padding: 0.25rem 0.5rem;
+    padding: 0.3rem 0.45rem;
     background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--color-border);
-    border-radius: 6px;
+    border-radius: 8px;
+}
+
+.lang-current,
+.lang-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: var(--transition-fast);
+    line-height: 0;
+}
+
+.lang-flag {
+    width: 22px;
+    height: 15px;
+    border-radius: 2px;
+    display: block;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .lang-current {
-    color: var(--color-accent);
+    box-shadow: 0 0 0 1.5px var(--color-accent);
+    background-color: rgba(255, 255, 255, 0.08);
 }
 
 .lang-link {
-    color: var(--color-text-muted);
-    text-decoration: none;
-    transition: var(--transition-fast);
+    opacity: 0.65;
 }
 
 .lang-link:hover {
-    color: #fff;
-}
-
-.lang-divider {
-    color: #334155;
+    opacity: 1;
+    transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {
     .lang-switcher {
         margin-right: 0.5rem;
     }
+}
+
+/* Phone & WhatsApp Badge */
+.contact-phone-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.whatsapp-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    background-color: rgba(37, 211, 102, 0.14);
+    border: 1px solid rgba(37, 211, 102, 0.4);
+    color: #4ade80;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.whatsapp-badge:hover {
+    background-color: rgba(37, 211, 102, 0.25);
+    border-color: #25d366;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.whatsapp-badge svg {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
 }
